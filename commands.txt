@@ -1,0 +1,38 @@
+sudo apt-get install php-mysqli
+
+sudo apt install php libapache2-mod-php
+sudo apt install apache2 mysql-server php libapache2-mod-php php-mysql
+
+sudo chown -R www-data:www-data /var/www/html/
+
+
+sudo a2enmod php
+
+sudo apt search libapache2-mod-php
+
+sudo a2enmod php7.4
+
+sudo mysql -u root -p
+
+CREATE USER 'your_username'@'localhost' IDENTIFIED BY 'your_password';
+GRANT ALL PRIVILEGES ON your_database_name.* TO 'your_username'@'localhost';
+FLUSH PRIVILEGES;
+
+
+USE your_database;
+
+CREATE TABLE sahil (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL
+);
+
+
+
+INSERT INTO sahil (name, email, message)
+VALUES
+    ('John Doe', 'john@example.com', 'Hello there!'),
+    ('Jane Smith', 'jane@example.com', 'Nice to meet you.');
+
+sudo tail -n 20 /var/log/apache2/error.log
